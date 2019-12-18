@@ -1,6 +1,7 @@
 import Generation from './components/generation.js';
 import Search from './components/Search/search.js';
 import { input, submit } from './components//Search/items_search.js';
+import Control from './controls/controls.js';
 import './scss/main.scss';
 
 Generation();

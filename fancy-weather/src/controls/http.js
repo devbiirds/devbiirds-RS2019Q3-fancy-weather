@@ -13,7 +13,7 @@ export default class HTTP{
       }
   
      static Get(url) {
-          return fetch(url,).then(this.checkStatus).then((response) => response.json()).then(result => Control.ChangeInfoTemp(result));
+          return fetch(url,).then(this.checkStatus).then((response) => response.json());
           
         }
       

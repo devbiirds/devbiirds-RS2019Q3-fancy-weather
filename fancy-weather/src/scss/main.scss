@@ -1,10 +1,30 @@
 
 .searchbox{
+    width: 300px;
     display: flex;
+    justify-content: space-around;
 &__submit{
-    width: 50px;
-    height: 50px;
-    background: red;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 110px;
+    height: 44px;
+    background: rgba(174, 181, 185, 0.5);
+border-radius: 5px;
+    &::after{
+        content: "Submit";
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 17px;
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+    }
 }
 }
 .tools{
@@ -16,6 +36,7 @@
     display: flex;
     justify-content: space-around;
     &__changeimage{
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -30,13 +51,23 @@ border-radius: 5px;
         }
     }
     &__changelang{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background: rgba(180, 184, 187, 0.4);
         border-radius: 5px;
         width: 71px;
         height: 44px;
+        &--lang{
+            color:#fff;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+        }
        
     }
     &__changetemp{
+        cursor: pointer;
         background: rgba(180, 184, 187, 0.4);
         border-radius: 5px;
         width: 88px;

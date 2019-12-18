@@ -1,0 +1,12 @@
+const weather_location = document.createElement('div');
+const city = document.createElement('p');
+const country = document.createElement('p');
+const date = document.createElement('div');
+const mainday = document.createElement('div');
+const mainday_temp = document.createElement('p');
+const mainday_description = document.createElement('p');
+const daysbox = document.createElement('div');
+const day1 = document.createElement('div');
+const day2 = document.createElement('div');
+const day3 = document.createElement('div');
+export {weather_location,city,country,date,mainday,day1,day2,day3,mainday_temp,mainday_description,daysbox};

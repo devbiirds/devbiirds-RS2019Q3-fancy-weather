@@ -13,8 +13,8 @@ export default class HTTP{
       }
   
      static Get(url) {
-          return fetch(url,).then(this.checkStatus).then((response) => response.json());
-          
+         
+          return fetch(url).then(this.checkStatus).then((response) => response.json());
         }
       
     

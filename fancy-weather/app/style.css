@@ -1,3 +1,9 @@
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%; }
+
 .searchbox {
   width: 300px;
   display: flex;
@@ -24,10 +30,11 @@
 
 .tools {
   display: flex;
-  width: 240px;
+  width: 140px;
   justify-content: space-around; }
 
 .controlsbox {
+  padding-top: 10px;
   display: flex;
   justify-content: space-around; }
   .controlsbox__changeimage {
@@ -62,5 +69,106 @@
     border-radius: 5px;
     width: 88px;
     height: 44px; }
+
+.mainbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.weatherbox {
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .weatherbox__location {
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif; }
+  .weatherbox__date {
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif; }
+  .weatherbox__daysbox {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif; }
+  .weatherbox__mainday {
+    display: flex;
+    justify-content: space-between;
+    width: 500px; }
+    .weatherbox__mainday--temp {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 60px; }
+    .weatherbox__mainday--description {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px; }
+  .weatherbox__daysbox {
+    width: 500px; }
+    .weatherbox__daysbox--day1 {
+      display: flex;
+      flex-direction: column-reverse; }
+    .weatherbox__daysbox--day2 {
+      display: flex;
+      flex-direction: column-reverse; }
+    .weatherbox__daysbox--day3 {
+      display: flex;
+      flex-direction: column-reverse; }
+
+.mapsbox {
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 32px;
+  font-family: 'Montserrat', sans-serif;
+  color: white; }
+  .mapsbox #map {
+    position: relative;
+    height: 100%; }
+
+.wrapper {
+  height: 100%; }
+
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0; }
+
+@media screen and (max-width: 1016px) {
+  .mainbox {
+    flex-direction: column; } }
+
+@media screen and (max-width: 584px) {
+  .controlsbox {
+    flex-direction: column; }
+  .weatherbox__mainday {
+    width: 300px;
+    flex-direction: column; }
+  .mapsbox {
+    margin-left: 90px; }
+  .weatherbox {
+    margin-left: 20px;
+    width: 500px; }
+    .weatherbox__location {
+      font-size: 20px; }
+    .weatherbox__date {
+      font-size: 28px;
+      font-family: 'Montserrat', sans-serif; }
+    .weatherbox__daysbox {
+      flex-direction: column;
+      margin-left: 200px;
+      font-size: 18px; }
+    .weatherbox__mainday--temp {
+      font-size: 30px; }
+    .weatherbox__mainday--description {
+      font-size: 20px; } }
 
 /*# sourceMappingURL=style.css.map*/

@@ -5,4 +5,4 @@ const search = document.createElement('div');
 const mainbox = document.createElement('div');
 const mapsbox = document.createElement('div');
 const weatherbox = document.createElement('div')
-export {wrapper,controlsBox,tools,search,mainbox,mapsbox,weatherbox};
+export {wrapper, controlsBox, tools, search, mainbox, mapsbox, weatherbox };

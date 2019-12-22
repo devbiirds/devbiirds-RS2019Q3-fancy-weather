@@ -5,11 +5,10 @@ constructor(_input,_submit){
     this.submit = _submit;
     this.submit.addEventListener('click',()=>{
         this.ReadData();
-    })
-    
+   })
 }
-ReadData(){
-     Control.Search(this.input.value);
 
+ReadData() {
+     Control.Search(this.input.value);
 }
 }

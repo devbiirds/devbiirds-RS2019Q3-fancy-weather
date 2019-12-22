@@ -1,29 +1,21 @@
-class Http {
-  // eslint-disable-next-line class-methods-use-this
-  checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
+import Control from '../controls/controls.js';
+export default class HTTP{
+    constructor(){
+
     }
-    const error = new Error(response.statusText);
-    error.response = response;
-    throw error;
-  }
-
-  get(url) {
-    return fetch(url).then(this.checkStatus).then((response) => response.json());
-  }
-
-  post(url, model) {
-    const req = new Request(url, {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      method: 'post',
-      body: JSON.stringify(model),
-    });
-    return fetch(req).then(this.checkStatus).then((response) => response.json());        
-  }
+    checkStatus(response) {
+        if (response.status >= 200 && response.status < 300) {
+          return response;
+        }
+        const error = new Error(response.statusText);
+        error.response = response;
+        throw error;
+      }
+  
+     static Get(url) {
+         
+          return fetch(url).then(this.checkStatus).then((response) => response.json());
+        }
+      
+    
 }
-
-export default new Http();

@@ -377,7 +377,7 @@ const mainday_humidity = document.createElement('p');
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Control; });
-/* harmony import */ var _http_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./http.js */ "./src/controls/http.js");
+/* harmony import */ var _services_http_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/http.js */ "./src/services/http.js");
 /* harmony import */ var _components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/weather/weather_items.js */ "./src/components/weather/weather_items.js");
 /* harmony import */ var _ip_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ip.js */ "./src/controls/ip.js");
 /* harmony import */ var _components_Map_maps_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Map/maps.js */ "./src/components/Map/maps.js");
@@ -391,7 +391,7 @@ class Control {
     // eslint-disable-next-line no-undef
     const body = document.querySelector('body');
     const url = `https://api.unsplash.com/photos/random?query=${mainday_state.textContent}&client_id=fd2fd649512ceb8c4c593a0355dec68dba32709b9666d506cd45e95b883efa7e`;
-    _http_js__WEBPACK_IMPORTED_MODULE_0__["default"].Get(url).then((result) => body.style.background = `url(${result.urls.full})`);
+    _services_http_js__WEBPACK_IMPORTED_MODULE_0__["default"].Get(url).then((result) => body.style.background = `url(${result.urls.full})`);
   }
 
 static SetInfoDate(_date,_day1_description,_day2_description,_day3_description){
@@ -558,7 +558,7 @@ if(dateArray[3] == Number(element.dt_txt.slice(8,10))){
 static Search(value){
     let url = `https://api.openweathermap.org/data/2.5/forecast?q=${value}&lang=ru&APPID=4d7c525d8bf41c0284921f87d30a3c5e`;
     
-    _http_js__WEBPACK_IMPORTED_MODULE_0__["default"].Get(url).then(result => Control.ChangeInfoTemp(result,_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["city"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["country"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["date"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day1_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day2_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day3_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_state"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_feels"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_wind"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_humidity"])).then(()=> this.SetInfoDate(_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["date"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day1_description"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day2_description"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day3_description"])).then(()=>{setInterval(() => {
+    _services_http_js__WEBPACK_IMPORTED_MODULE_0__["default"].Get(url).then(result => Control.ChangeInfoTemp(result,_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["city"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["country"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["date"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day1_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day2_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day3_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_state"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_feels"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_wind"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_humidity"])).then(()=> this.SetInfoDate(_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["date"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day1_description"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day2_description"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day3_description"])).then(()=>{setInterval(() => {
       this.SetInfoDate(_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["date"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day1_description"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day2_description"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day3_description"])
     }, 10000);});
     
@@ -567,48 +567,13 @@ static Start(){
  
   _ip_js__WEBPACK_IMPORTED_MODULE_2__["default"].GetIP().then(result => result.city).then((result)=>{
     let url = `https://api.openweathermap.org/data/2.5/forecast?q=${result}&lang=ru&APPID=4d7c525d8bf41c0284921f87d30a3c5e`;
-    _http_js__WEBPACK_IMPORTED_MODULE_0__["default"].Get(url).then(result => Control.ChangeInfoTemp(result,_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["city"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["country"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["date"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day1_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day2_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day3_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_state"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_feels"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_wind"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_humidity"])).then(()=> this.SetInfoDate(_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["date"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day1_description"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day2_description"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day3_description"]))
+    _services_http_js__WEBPACK_IMPORTED_MODULE_0__["default"].Get(url).then(result => Control.ChangeInfoTemp(result,_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["city"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["country"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["date"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day1_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day2_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day3_temp"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_state"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_feels"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_wind"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["mainday_humidity"])).then(()=> this.SetInfoDate(_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["date"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day1_description"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day2_description"],_components_weather_weather_items_js__WEBPACK_IMPORTED_MODULE_1__["day3_description"]))
   });
   
   
 }
 }
 
-
-/***/ }),
-
-/***/ "./src/controls/http.js":
-/*!******************************!*\
-  !*** ./src/controls/http.js ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return HTTP; });
-/* harmony import */ var _controls_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controls.js */ "./src/controls/controls.js");
-
-class HTTP{
-    constructor(){
-
-    }
-    checkStatus(response) {
-        if (response.status >= 200 && response.status < 300) {
-          return response;
-        }
-        const error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }
-  
-     static Get(url) {
-         
-          return fetch(url).then(this.checkStatus).then((response) => response.json());
-        }
-      
-    
-}
 
 /***/ }),
 
@@ -684,6 +649,41 @@ btnChangeImage.addEventListener('click',() => {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/services/http.js":
+/*!******************************!*\
+  !*** ./src/services/http.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return HTTP; });
+/* harmony import */ var _controls_controls_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controls/controls.js */ "./src/controls/controls.js");
+
+class HTTP{
+    constructor(){
+
+    }
+    checkStatus(response) {
+        if (response.status >= 200 && response.status < 300) {
+          return response;
+        }
+        const error = new Error(response.statusText);
+        error.response = response;
+        throw error;
+      }
+  
+     static Get(url) {
+         
+          return fetch(url).then(this.checkStatus).then((response) => response.json());
+        }
+      
+    
+}
 
 /***/ })
 

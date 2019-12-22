@@ -1,4 +1,4 @@
-import HTTP from './http.js';
+import HTTP from '../services/http.js';
 import { weather_location, city, country, date, mainday, day1, day2, day3, day1_temp, day2_temp, day3_temp, day1_description, day2_description, day3_description, mainday_temp, mainday_description, daysbox, mainday_state, mainday_feels, mainday_wind, mainday_humidity} from '../components/weather/weather_items.js';
 import IP from './ip.js';
 import CreateMap from '../components/Map/maps.js';
